@@ -2,21 +2,26 @@
     {
         "id": 1,
         "file": "voices/ilkkan1.mp3",
-        "description": ""
+        "description": "Hərzəkar ağız başa yumruq vurdurar"
     },
     {
         "id": 2,
         "file": "voices/ilkkan2.mp3",
-        "description": ""
+        "description": "Avcı ne kadar hile bilirse ayı da o kadar yol bilir"
     },
     {
         "id": 3,
         "file": "voices/ilkkan3.mp3",
-        "description": ""
+        "description": "Abi yaxşı gündə yar yaxşıdır yaman gündə yetiş qardaş"
     },
     {
         "id": 4,
         "file": "voices/ilkkan4.mp3",
-        "description": ""
+        "description": "Ya Yılmazım bak insan söylerse boşalır, susarsa şişer"
+    },
+    {
+        "id": 5,
+        "file": "voices/ilkkan5.mp3",
+        "description": "Abi tanrıyı güldürmek istiyorsan ona planlarından bahset"
     }
 ]

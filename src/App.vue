@@ -5,7 +5,3 @@ import Ilkkan from './components/Ilkkan.vue'
 <template>
   <Ilkkan />
 </template>
-
-<style scoped>
-
-</style>
