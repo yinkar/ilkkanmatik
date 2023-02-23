@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import voices from '../assets/voices.json';
 
 // Element references
 const ilkkan = ref(null);
@@ -8,18 +9,44 @@ const audioSource = ref(null);
 
 // Variable references
 const talking = ref(false);
+const voiceFiles = ref([]);
 
 // Say an idiom function
 function ozdeyisle() {
   if (!talking.value) {
     ilkkan.value.classList.add('konus');
     talking.value = true;
+
+    audioSource.value.src = voiceFiles.value[0];
+
+    player.value.load();
+    player.value.play();
   }
   else {
     ilkkan.value.classList.remove('konus');
     talking.value = false;
   }
 }
+
+function suskunluk() {
+  ilkkan.value.classList.remove('konus');
+  talking.value = false;
+}
+
+onMounted(() => {
+  voices.forEach(v => {
+    import(`../assets/${v.file}`)
+      .then(i => {
+        fetch(i.default)
+          .then(r => r.body.getReader())
+            .then(stream => new Response(stream))
+              .then(response => response.blob())
+                .then(blob => URL.createObjectURL(blob))
+                  .then(url => voiceFiles.value.push(url))
+                    .catch(err => console.error(err));
+      });
+  });
+});
 </script>
 
 <template>
@@ -27,8 +54,8 @@ function ozdeyisle() {
     <img src="../assets/ilkkan.png" alt="İlkkan">
   </button>
 
-  <audio controls="controls" id="player" ref="player" v-show="false">
-    <source id="audio-source" ref="audioSource" src="" />
+  <audio id="player" ref="player" @ended="suskunluk" v-show="false">
+    <source id="audio-source" ref="audioSource" src="" type="audio/mp3" />
   </audio>
 </template>
 
