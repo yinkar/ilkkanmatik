@@ -41,16 +41,7 @@ function suskunluk() {
 
 onMounted(() => {
   voices.forEach(v => {
-    import(`/ilkkanmatik/${v.file}`)
-      .then(i => {
-        fetch(i.default)
-          .then(r => r.body)
-            .then(stream => new Response(stream))
-              .then(response => response.blob())
-                .then(blob => URL.createObjectURL(blob))
-                  .then(url => voiceFiles.value.push(url))
-                    .catch(err => console.error(err));
-      });
+    voiceFiles.value.push(`/ilkkanmatik/${v.file}`);
   });
 });
 </script>
