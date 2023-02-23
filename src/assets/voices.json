@@ -23,5 +23,20 @@
         "id": 5,
         "file": "voices/ilkkan5.mp3",
         "description": "Abi tanrıyı güldürmek istiyorsan ona planlarından bahset"
+    },
+    {
+        "id": 6,
+        "file": "voices/ilkkan6.mp3",
+        "description": "Her kim ki biner ellerin sıtkına, elbet düşer milletin rıkkına"
+    },
+    {
+        "id": 7,
+        "file": "voices/ilkkan7.mp3",
+        "description": "Bir yıl sonrasıysa düşündüğün, tohum ek. Ağaç dik, on yıl sonrasıysa tasarladığın, Ama düşünüyorsan yüz yıl ötesini, halkı eğit o zaman... Bir kez tohum ekersen, bir kez ürün alırsın, Bir kez ağaç dikersen, on kez ürün alırsın, Yüz kez olur bu ürün, eğitirsen toplumu demiş Kuan-Tzu"
+    },
+    {
+        "id": 8,
+        "file": "voices/ilkkan8.mp3",
+        "description": "İlkbaharda usul usul yürü, toprak ana hamiledir"
     }
 ]
