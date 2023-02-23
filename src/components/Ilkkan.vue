@@ -41,7 +41,7 @@ function suskunluk() {
 
 onMounted(() => {
   voices.forEach(v => {
-    import(`/${v.file}`)
+    import(`${v.file}`)
       .then(i => {
         fetch(i.default)
           .then(r => r.body)
