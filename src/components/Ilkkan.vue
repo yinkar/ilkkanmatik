@@ -17,7 +17,11 @@ function ozdeyisle() {
     ilkkan.value.classList.add('konus');
     talking.value = true;
 
-    audioSource.value.src = voiceFiles.value[0];
+    const random = (max) => {
+      return Math.floor(Math.random() * max);
+    }
+
+    audioSource.value.src = voiceFiles.value.at(random(voiceFiles.value.length));
 
     player.value.load();
     player.value.play();
@@ -25,6 +29,8 @@ function ozdeyisle() {
   else {
     ilkkan.value.classList.remove('konus');
     talking.value = false;
+    player.value.pause();
+    player.value.currentTime = 0;
   }
 }
 
@@ -38,7 +44,7 @@ onMounted(() => {
     import(`../assets/${v.file}`)
       .then(i => {
         fetch(i.default)
-          .then(r => r.body.getReader())
+          .then(r => r.body)
             .then(stream => new Response(stream))
               .then(response => response.blob())
                 .then(blob => URL.createObjectURL(blob))
@@ -54,7 +60,7 @@ onMounted(() => {
     <img src="../assets/ilkkan.png" alt="İlkkan">
   </button>
 
-  <audio id="player" ref="player" @ended="suskunluk" v-show="false">
+  <audio id="player" ref="player" @ended="suskunluk" v-show="false" preload="auto">
     <source id="audio-source" ref="audioSource" src="" type="audio/mp3" />
   </audio>
 </template>
