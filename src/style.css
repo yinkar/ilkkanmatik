@@ -9,4 +9,5 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #3c3c3d;
+  -webkit-tap-highlight-color: transparent;
 }
