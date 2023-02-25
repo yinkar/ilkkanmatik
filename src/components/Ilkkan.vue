@@ -15,7 +15,7 @@ const isBegin = ref(true);
 const voiceFiles = ref([]);
 
 // Say an idiom function
-function ozdeyisle() {
+function idiom() {
   if (!isTalking.value) {
     isLoading.value = true;
 
@@ -52,12 +52,14 @@ onMounted(() => {
   voices.forEach(v => {
     voiceFiles.value.push(`/ilkkanmatik/${v.file}`);
   });
+
+  window.addEventListener('keydown', idiom)
 });
 </script>
 
 <template>
   <button
-    @click="ozdeyisle()"
+    @click="idiom()"
     class="ilkkan"
     ref="ilkkan" 
     :class="{
