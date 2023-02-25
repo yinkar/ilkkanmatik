@@ -23,7 +23,10 @@ function ozdeyisle() {
       return Math.floor(Math.random() * max);
     }
 
-    audioSource.value.src = voiceFiles.value.at(random(voiceFiles.value.length));
+    console.log(voiceFiles.value);
+    console.log(random(voiceFiles.value.length));
+
+    audioSource.value.src = voiceFiles.value[random(voiceFiles.value.length)];
 
     player.value.load();
     player.value.play();
