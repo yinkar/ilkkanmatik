@@ -53,5 +53,15 @@
         "id": 11,
         "file": "voices/ilkkan11.mp3",
         "description": "İşte yayla kadar götüm olsa tek çobanım sen olmazdın"
+    },
+    {
+        "id": 12,
+        "file": "voices/ilkkan12.mp3",
+        "description": "Hayat, her zaman arzularımızı ve beklentilerimizi karşılamıyor"
+    },
+    {
+        "id": 13,
+        "file": "voices/ilkkan13.mp3",
+        "description": "Abi dost, kötü günde belli olur"
     }
 ]
