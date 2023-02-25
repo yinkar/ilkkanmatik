@@ -48,5 +48,10 @@
         "id": 10,
         "file": "voices/ilkkan10.mp3",
         "description": "İnsanların olmamızı istediği kişi değiliz, olmaya karar verdiğimiz kişiyiz der Paulo Coelho"
+    },
+    {
+        "id": 11,
+        "file": "voices/ilkkan11.mp3",
+        "description": "İşte yayla kadar götüm olsa tek çobanım sen olmazdın"
     }
 ]
