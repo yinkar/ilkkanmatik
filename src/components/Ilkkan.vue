@@ -23,9 +23,6 @@ function idiom() {
       return Math.floor(Math.random() * max);
     }
 
-    console.log(voiceFiles.value);
-    console.log(random(voiceFiles.value.length));
-
     audioSource.value.src = voiceFiles.value[random(voiceFiles.value.length)];
 
     player.value.load();
