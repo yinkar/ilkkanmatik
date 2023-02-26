@@ -13,6 +13,7 @@ const isTalking = ref(false);
 const isBegin = ref(true);
 
 const voiceFiles = ref([]);
+const randomStack = ref(new Set([]));
 
 // Say an idiom function
 function idiom() {
@@ -23,7 +24,19 @@ function idiom() {
       return Math.floor(Math.random() * max);
     }
 
-    audioSource.value.src = voiceFiles.value[random(voiceFiles.value.length)];
+    let randomIndex;
+
+    do {
+      randomIndex = random(voiceFiles.value.length);
+    } while (randomStack.value.has(randomIndex));
+
+    randomStack.value.add(randomIndex);
+
+    if (randomStack.value.size >= voiceFiles.value.length) {
+      randomStack.value.clear();
+    }
+    
+    audioSource.value.src = voiceFiles.value[randomIndex];
 
     player.value.load();
     player.value.play();
