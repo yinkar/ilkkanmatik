@@ -11,58 +11,65 @@ const audioSource = ref(null);
 const isLoading = ref(false);
 const isTalking = ref(false);
 const isBegin = ref(true);
-
 const voiceFiles = ref([]);
 const randomStack = ref(new Set([]));
 
-// Say an idiom function
+// Say an idiom method
 function idiom() {
-  if (!isTalking.value) {
-    isLoading.value = true;
-
-    const random = (max) => {
-      return Math.floor(Math.random() * max);
-    }
-
-    let randomIndex;
-
-    do {
-      randomIndex = random(voiceFiles.value.length);
-    } while (randomStack.value.has(randomIndex));
-
-    randomStack.value.add(randomIndex);
-
-    if (randomStack.value.size >= voiceFiles.value.length) {
-      randomStack.value.clear();
-    }
-    
-    audioSource.value.src = voiceFiles.value[randomIndex];
-
-    player.value.load();
-    player.value.play();
-  }
-  else {
+  // Stop on pressing again
+  if (isTalking.value) {
     player.value.pause();
     player.value.currentTime = 0;
+    return;
   }
+
+  // Loading state
+  isLoading.value = true;
+
+  const random = (max) => {
+    return Math.floor(Math.random() * max);
+  }
+
+  let randomIndex;
+
+  // Get random voice but prevent same one after another by using a stack
+  do {
+    randomIndex = random(voiceFiles.value.length);
+  } while (randomStack.value.has(randomIndex));
+
+  randomStack.value.add(randomIndex);
+
+  // Clear random stack when stack size reached number of voice files
+  if (randomStack.value.size >= voiceFiles.value.length) {
+    randomStack.value.clear();
+  }
+  
+  audioSource.value.src = voiceFiles.value[randomIndex];
+
+  player.value.load();
+  player.value.play();
 }
 
+// Start to talk method
 function talk() {
   isTalking.value = true;
   isLoading.value = false;
   isBegin.value = false;
 }
 
+// Stop to talk method
 function silence() {
   isTalking.value = false;
   isLoading.value = false;
 }
 
 onMounted(() => {
+  // Set voice files to array
   voices.forEach(v => {
     voiceFiles.value.push(`/ilkkanmatik/${v.file}`);
   });
 
+  // Assign keyboard keys to say an idiom
   window.addEventListener('keydown', idiom)
 });
 </script>
