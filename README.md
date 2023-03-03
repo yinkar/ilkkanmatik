@@ -1,5 +1,5 @@
 # Ilkkanmatik
-Make İlkkan from Gibi to say random idoms.
+Random idioms of İlkkan from Gibi series
 
 [Website](https://yinkar.github.io/ilkkanmatik)
 
