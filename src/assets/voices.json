@@ -68,5 +68,10 @@
         "id": 14,
         "file": "voices/ilkkan14.mp3",
         "description": "Ayinesi iştir kişinin lafa bakılmaz"
+    },
+    {
+        "id": 15,
+        "file": "voices/ilkkan15.mp3",
+        "description": "Olacakla öleceğin çaresi yoktur abi"
     }
 ]
