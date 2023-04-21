@@ -73,5 +73,15 @@
         "id": 15,
         "file": "voices/ilkkan15.mp3",
         "description": "Olacakla öleceğin çaresi yoktur abi"
+    },
+    {
+        "id": 16,
+        "file": "voices/ilkkan16.mp3",
+        "description": "Abi bak, size şunu söyleyeyim. Gök gürlerse yağmur yağar ve Güneş'tir her yağmurun ardından beliren..."
+    },
+    {
+        "id": 17,
+        "file": "voices/ilkkan17.mp3",
+        "description": "Ah benim emeklerim! Ah benim dertli başım! Sana da şunu söyleyeyim Nezih abi, zamanı yenemezsin"
     }
 ]
