@@ -2,86 +2,103 @@
     {
         "id": 1,
         "file": "voices/ilkkan1.mp3",
-        "description": "Hərzəkar ağız başa yumruq vurdurar"
+        "description": "Hərzəkar ağız başa yumruq vurdurar",
+        "family_friendly": true
     },
     {
         "id": 2,
         "file": "voices/ilkkan2.mp3",
-        "description": "Avcı ne kadar hile bilirse ayı da o kadar yol bilir"
+        "description": "Avcı ne kadar hile bilirse ayı da o kadar yol bilir",
+        "family_friendly": true
     },
     {
         "id": 3,
         "file": "voices/ilkkan3.mp3",
-        "description": "Abi yaxşı gündə yar yaxşıdır yaman gündə yetiş qardaş"
+        "description": "Abi yaxşı gündə yar yaxşıdır yaman gündə yetiş qardaş",
+        "family_friendly": true
     },
     {
         "id": 4,
         "file": "voices/ilkkan4.mp3",
-        "description": "Ya Yılmazım bak insan söylerse boşalır, susarsa şişer"
+        "description": "Ya Yılmazım bak insan söylerse boşalır, susarsa şişer",
+        "family_friendly": true
     },
     {
         "id": 5,
         "file": "voices/ilkkan5.mp3",
-        "description": "Abi tanrıyı güldürmek istiyorsan ona planlarından bahset"
+        "description": "Abi tanrıyı güldürmek istiyorsan ona planlarından bahset",
+        "family_friendly": true
     },
     {
         "id": 6,
         "file": "voices/ilkkan6.mp3",
-        "description": "Her kim ki biner ellerin sıtkına, elbet düşer milletin rıkkına"
+        "description": "Her kim ki biner ellerin sıtkına, elbet düşer milletin rıkkına",
+        "family_friendly": true
     },
     {
         "id": 7,
         "file": "voices/ilkkan7.mp3",
-        "description": "\"Bir yıl sonrasıysa düşündüğün, tohum ek. Ağaç dik, on yıl sonrasıysa tasarladığın, Ama yüz yıl sonrasını düşünüyorsan, halkı eğit. Bir kez tohum ekersen, bir kez ürün alırsın, bir kez ağaç dikersen, on kez ürün alırsın, ama yüz kez olur o ürün, eğitirsen toplumu. Birine balık verirsen doyar bir defa. Balık tutmayı öğret, doysun ömrü boyunca\" der Kuan-Tzu"
+        "description": "\"Bir yıl sonrasıysa düşündüğün, tohum ek. Ağaç dik, on yıl sonrasıysa tasarladığın, Ama yüz yıl sonrasını düşünüyorsan, halkı eğit. Bir kez tohum ekersen, bir kez ürün alırsın, bir kez ağaç dikersen, on kez ürün alırsın, ama yüz kez olur o ürün, eğitirsen toplumu. Birine balık verirsen doyar bir defa. Balık tutmayı öğret, doysun ömrü boyunca\" der Kuan-Tzu",
+        "family_friendly": true
     },
     {
         "id": 8,
         "file": "voices/ilkkan8.mp3",
-        "description": "İlkbaharda usul usul yürü, toprak ana hamiledir"
+        "description": "İlkbaharda usul usul yürü, toprak ana hamiledir",
+        "family_friendly": true
     },
     {
         "id": 9,
         "file": "voices/ilkkan9.mp3",
-        "description": "Ne derler? Tebdili mekanda ferahlık vardır, bir. Sahipsiz kapı anahtarsız açılır, iki"
+        "description": "Ne derler? Tebdili mekanda ferahlık vardır, bir. Sahipsiz kapı anahtarsız açılır, iki",
+        "family_friendly": true
     },
     {
         "id": 10,
         "file": "voices/ilkkan10.mp3",
-        "description": "İnsanların olmamızı istediği kişi değiliz, olmaya karar verdiğimiz kişiyiz der Paulo Coelho"
+        "description": "İnsanların olmamızı istediği kişi değiliz, olmaya karar verdiğimiz kişiyiz der Paulo Coelho",
+        "family_friendly": true
     },
     {
         "id": 11,
         "file": "voices/ilkkan11.mp3",
-        "description": "İşte yayla kadar götüm olsa tek çobanım sen olmazdın"
+        "description": "İşte yayla kadar götüm olsa tek çobanım sen olmazdın",
+        "family_friendly": false
     },
     {
         "id": 12,
         "file": "voices/ilkkan12.mp3",
-        "description": "Hayat, her zaman arzularımızı ve beklentilerimizi karşılamıyor"
+        "description": "Hayat, her zaman arzularımızı ve beklentilerimizi karşılamıyor",
+        "family_friendly": true
     },
     {
         "id": 13,
         "file": "voices/ilkkan13.mp3",
-        "description": "Abi dost, kötü günde belli olur"
+        "description": "Abi dost, kötü günde belli olur",
+        "family_friendly": true
     },
     {
         "id": 14,
         "file": "voices/ilkkan14.mp3",
-        "description": "Ayinesi iştir kişinin lafa bakılmaz"
+        "description": "Ayinesi iştir kişinin lafa bakılmaz",
+        "family_friendly": true
     },
     {
         "id": 15,
         "file": "voices/ilkkan15.mp3",
-        "description": "Olacakla öleceğin çaresi yoktur abi"
+        "description": "Olacakla öleceğin çaresi yoktur abi",
+        "family_friendly": true
     },
     {
         "id": 16,
         "file": "voices/ilkkan16.mp3",
-        "description": "Abi bak, size şunu söyleyeyim. Gök gürlerse yağmur yağar ve Güneş'tir her yağmurun ardından beliren..."
+        "description": "Abi bak, size şunu söyleyeyim. Gök gürlerse yağmur yağar ve Güneş'tir her yağmurun ardından beliren...",
+        "family_friendly": true
     },
     {
         "id": 17,
         "file": "voices/ilkkan17.mp3",
-        "description": "Ah benim emeklerim! Ah benim dertli başım! Sana da şunu söyleyeyim Nezih abi, zamanı yenemezsin"
+        "description": "Ah benim emeklerim! Ah benim dertli başım! Sana da şunu söyleyeyim Nezih abi, zamanı yenemezsin",
+        "family_friendly": true
     }
 ]

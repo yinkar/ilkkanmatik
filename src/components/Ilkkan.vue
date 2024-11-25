@@ -1,7 +1,9 @@
 <script setup>
-import { onMounted, ref } from 'vue';
-import voices from '../assets/voices.json';
+import { onMounted, ref, watchEffect } from 'vue';
+import voiceList from '../assets/voices.json';
 import '@fontsource/quicksand';
+import Toggle from '@vueform/toggle';
+import '@vueform/toggle/themes/default.css';
 
 // Element references
 const ilkkan = ref(null);
@@ -12,11 +14,16 @@ const audioSource = ref(null);
 const isLoading = ref(false);
 const isTalking = ref(false);
 const isBegin = ref(true);
-const voiceFiles = ref([]);
-const subtitles = ref([]);
+const voices = ref([]);
 const randomStack = ref(new Set([]));
 const selectedItem = ref(null);
 const subtitleText = ref('');
+const familyFriendly = ref(true);
+
+watchEffect(() => {
+  voices.value = familyFriendly.value ? voiceList.filter(v => v.family_friendly) : voiceList;
+  randomStack.value.clear();
+});
 
 // Say an idiom method
 function idiom() {
@@ -36,17 +43,20 @@ function idiom() {
 
   // Get random voice but prevent same one after another by using a stack
   do {
-    selectedItem.value = random(voiceFiles.value.length);
+    const randomKey = random(voices.value.length);
+
+    selectedItem.value = randomKey;
+
   } while (randomStack.value.has(selectedItem.value));
 
   randomStack.value.add(selectedItem.value);
 
   // Clear random stack when stack size reached number of voice files
-  if (randomStack.value.size >= voiceFiles.value.length) {
+  if (randomStack.value.size >= voices.value.length) {
     randomStack.value.clear();
   }
   
-  audioSource.value.src = voiceFiles.value[selectedItem.value];
+  audioSource.value.src = `/ilkkanmatik/${voices.value[selectedItem.value].file}`;
 
   player.value.load();
   player.value.play();
@@ -54,7 +64,7 @@ function idiom() {
 
 // Start to talk method
 function talk() {
-  subtitleText.value = subtitles.value[selectedItem.value];
+  subtitleText.value = voices.value[selectedItem.value].description;
 
   isTalking.value = true;
   isLoading.value = false;
@@ -70,11 +80,7 @@ function silence() {
 }
 
 onMounted(() => {
-  // Set voice files to array
-  voices.forEach(v => {
-    voiceFiles.value.push(`/ilkkanmatik/${v.file}`);
-    subtitles.value.push(v.description);
-  });
+  voices.value = [...voiceList];
 
   // Assign keyboard keys to say an idiom
   window.addEventListener('keydown', idiom)
@@ -82,6 +88,14 @@ onMounted(() => {
 </script>
 
 <template>
+  <div class="panel">
+    <Toggle
+      v-model="familyFriendly"
+      on-label="Aile Dostu"
+      off-label="Gelişine"
+    ></Toggle>
+  </div>
+
   <button
     @click="idiom()"
     class="ilkkan"
@@ -103,6 +117,17 @@ onMounted(() => {
 </template>
 
 <style scoped>
+  .panel {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    --toggle-width: 100px;
+  }
+
   .ilkkan {
     border: none;
     background: none;

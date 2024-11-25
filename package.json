@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource/quicksand": "^5.1.0",
+    "@vueform/toggle": "^2.1.4",
     "vue": "^3.2.45"
   },
   "devDependencies": {
