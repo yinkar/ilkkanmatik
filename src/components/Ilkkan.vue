@@ -20,9 +20,13 @@ const selectedItem = ref(null);
 const subtitleText = ref('');
 const familyFriendly = ref(true);
 
-watchEffect(() => {
+const toggleFamilyFriendly = () => {
   voices.value = familyFriendly.value ? voiceList.filter(v => v.family_friendly) : voiceList;
   randomStack.value.clear();
+};
+
+watchEffect(() => {
+  toggleFamilyFriendly();
 });
 
 // Say an idiom method
@@ -43,10 +47,7 @@ function idiom() {
 
   // Get random voice but prevent same one after another by using a stack
   do {
-    const randomKey = random(voices.value.length);
-
-    selectedItem.value = randomKey;
-
+    selectedItem.value = random(voices.value.length);
   } while (randomStack.value.has(selectedItem.value));
 
   randomStack.value.add(selectedItem.value);
@@ -64,23 +65,25 @@ function idiom() {
 
 // Start to talk method
 function talk() {
-  subtitleText.value = voices.value[selectedItem.value].description;
-
   isTalking.value = true;
   isLoading.value = false;
   isBegin.value = false;
+
+  subtitleText.value = voices.value[selectedItem.value].description;
 }
 
 // Stop to talk method
 function silence() {
   isTalking.value = false;
   isLoading.value = false;
-
+  
   subtitleText.value = '';
 }
 
 onMounted(() => {
   voices.value = [...voiceList];
+  
+  toggleFamilyFriendly();
 
   // Assign keyboard keys to say an idiom
   window.addEventListener('keydown', idiom)
