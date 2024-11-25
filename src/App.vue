@@ -1,5 +1,5 @@
 <script setup>
-import Ilkkan from './components/Ilkkan.vue'
+import Ilkkan from './components/Ilkkan.vue';
 </script>
 
 <template>
