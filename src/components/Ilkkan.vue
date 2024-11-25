@@ -149,7 +149,7 @@ onMounted(() => {
     width: 300px;
     position: absolute;
     top: calc(100%/2 + 253px/2);
-    margin-top: 20px;
+    margin-top: 80px;
     left: calc(100%/2 - 300px/2);
     opacity: 0.3;
     animation: subtitle-shake 200ms linear infinite;
